@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    image: learning-docker-2:v1
+    ports:
+      - "${PUBLIC_PORT}:${PORT}"
+    restart: unless-stopped
+    environment:
+      PORT: ${PORT}
+
+
