@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  app:
+    image: registry.gitlab.com/alexeanred/learning-docker 
+    ports:
+      - "${PUBLIC_PORT}:${PORT}"
+    restart: unless-stopped
+    environment:
+      PORT: ${PORT}
