@@ -5,6 +5,10 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('tiennd124-dockerhub')
     }
     stages {
+        stage('Initialize') {
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
         stage("Build") {
             steps {
                 sh 'docker build -t tiennd124/github-jenkins-repo:latest .'
