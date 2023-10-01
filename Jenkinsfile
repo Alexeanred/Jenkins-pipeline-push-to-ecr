@@ -1,6 +1,8 @@
 // Declarative //
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:18.18.0-alpine3.18' }
+    }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('tiennd124-dockerhub')
     }
