@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('Build stage') {
-            steps { withDockerRegistry(credentialsId: 'docker-hub-1', url: 'https://index.docker.io/v1/') 
+            steps { withDockerRegistry(credentialsId: '123', url: 'https://index.docker.io/v1/') 
                 sh 'docker build -t tiennd124/github-jenkins-repo:v1 .'
                 sh 'docker push tiennd124/github-jenkins-repo:v1'
             }
